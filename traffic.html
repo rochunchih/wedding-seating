@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交通資訊 - L&J Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans TC', sans-serif; background: #fdf8f3; color: #4a3728; line-height: 1.8; }
+        .hero { background: linear-gradient(135deg, #d4a574 0%, #c4916a 50%, #b8805a 100%); color: #fff; text-align: center; padding: 48px 20px 36px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); }
+        .hero h1 { font-size: 1.8em; font-weight: 300; letter-spacing: 4px; margin-bottom: 6px; position: relative; }
+        .hero .subtitle { font-size: 1em; opacity: 0.9; font-weight: 300; letter-spacing: 2px; position: relative; }
+        .hero .venue { font-size: 1.15em; margin-top: 10px; font-weight: 500; position: relative; }
+        .hero .date { font-size: 0.95em; opacity: 0.85; margin-top: 4px; position: relative; }
+        .nav-links { display: flex; justify-content: center; gap: 12px; padding: 14px 20px; background: #fff; border-bottom: 1px solid #e8d5c4; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: #c4916a; font-size: 0.88em; padding: 6px 16px; border: 1px solid #d4a574; border-radius: 20px; transition: all 0.3s; }
+        .nav-links a:hover, .nav-links a.active { background: #d4a574; color: #fff; }
+        .container { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+        /* Timeline */
+        .timeline-section { padding: 28px 0 20px; }
+        .section-title { font-size: 1.15em; font-weight: 500; color: #c4916a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .section-title .icon { font-size: 1.3em; }
+        .timeline { display: flex; justify-content: center; gap: 0; position: relative; }
+        .timeline::before { content: ''; position: absolute; top: 50%; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, #e8d5c4, #d4a574, #e8d5c4); }
+        .timeline-item { text-align: center; position: relative; z-index: 1; flex: 1; max-width: 180px; }
+        .timeline-dot { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #d4a574, #c4916a); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 1.2em; box-shadow: 0 2px 8px rgba(196,145,106,0.3); }
+        .timeline-time { font-size: 1.1em; font-weight: 700; color: #b8805a; }
+        .timeline-label { font-size: 0.85em; color: #8a7060; margin-top: 2px; }
+
+        /* Info cards */
+        .card { background: #fff; border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(180,140,100,0.08); border: 1px solid #f0e4d8; }
+        .card-title { font-size: 1.05em; font-weight: 500; color: #b8805a; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .card-title .badge { display: inline-block; font-size: 0.7em; padding: 2px 8px; border-radius: 10px; color: #fff; font-weight: 400; }
+        .badge-orange { background: #e8945a; }
+        .badge-green { background: #6aab73; }
+        .badge-blue { background: #5a8ec8; }
+        .badge-purple { background: #9a7ec8; }
+        .route-item { padding: 8px 0; border-bottom: 1px dashed #f0e4d8; display: flex; gap: 10px; align-items: flex-start; }
+        .route-item:last-child { border-bottom: none; }
+        .route-icon { font-size: 1.3em; flex-shrink: 0; width: 32px; text-align: center; }
+        .route-detail { flex: 1; }
+        .route-name { font-weight: 500; font-size: 0.95em; }
+        .route-desc { font-size: 0.85em; color: #8a7060; margin-top: 2px; }
+        .bus-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+        .bus-tag { display: inline-block; background: #f0e4d8; color: #8a6a50; font-size: 0.78em; padding: 2px 8px; border-radius: 10px; }
+
+        /* Parking highlight */
+        .parking-box { background: linear-gradient(135deg, #fef9f0, #fdf0e0); border: 2px solid #e8c87a; border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+        .parking-title { font-size: 1.1em; font-weight: 700; color: #c4916a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .parking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .parking-item { background: #fff; border-radius: 10px; padding: 12px; text-align: center; border: 1px solid #f0e4d8; }
+        .parking-item .label { font-size: 0.8em; color: #8a7060; }
+        .parking-item .value { font-size: 1.15em; font-weight: 700; color: #b8805a; margin-top: 2px; }
+        .parking-note { background: #fff8ee; border-left: 3px solid #e8c87a; padding: 10px 14px; margin-top: 12px; border-radius: 0 8px 8px 0; font-size: 0.88em; color: #7a6040; line-height: 1.7; }
+        .parking-note strong { color: #c4916a; }
+
+        /* Coupon highlight */
+        .coupon-box { background: linear-gradient(135deg, #f0faf2, #e0f5e5); border: 2px dashed #6aab73; border-radius: 14px; padding: 18px; margin: 12px 0; text-align: center; }
+        .coupon-box .coupon-title { font-size: 1em; font-weight: 700; color: #4a8a53; margin-bottom: 6px; }
+        .coupon-box .coupon-detail { font-size: 0.9em; color: #5a7a5a; }
+        .coupon-box .coupon-amount { font-size: 1.8em; font-weight: 700; color: #4a8a53; margin: 6px 0; }
+        .coupon-box .coupon-sub { font-size: 0.8em; color: #7a9a7a; }
+
+        /* Map section */
+        .map-container { border-radius: 14px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(180,140,100,0.12); border: 1px solid #f0e4d8; }
+        .map-container iframe { width: 100%; height: 280px; border: 0; }
+        .map-actions { display: flex; gap: 10px; margin-top: 10px; }
+        .map-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px; background: #fff; border: 1px solid #d4a574; color: #c4916a; border-radius: 10px; text-decoration: none; font-size: 0.9em; font-weight: 500; transition: all 0.3s; }
+        .map-btn:hover { background: #d4a574; color: #fff; }
+        .map-btn.primary { background: linear-gradient(135deg, #d4a574, #c4916a); color: #fff; border: none; }
+        .map-btn.primary:hover { opacity: 0.9; }
+
+        /* Address bar */
+        .address-bar { background: #fff; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(180,140,100,0.08); border: 1px solid #f0e4d8; cursor: pointer; transition: all 0.2s; }
+        .address-bar:hover { border-color: #d4a574; }
+        .address-bar .pin { font-size: 1.4em; }
+        .address-bar .addr { flex: 1; }
+        .address-bar .addr-name { font-weight: 500; font-size: 0.95em; }
+        .address-bar .addr-text { font-size: 0.82em; color: #8a7060; }
+        .address-bar .copy-icon { color: #c4916a; font-size: 0.85em; }
+        .copied-toast { display: none; position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(74,55,40,0.9); color: #fff; padding: 8px 20px; border-radius: 20px; font-size: 0.85em; z-index: 999; }
+        .copied-toast.show { display: block; animation: fadeInOut 1.5s ease; }
+        @keyframes fadeInOut { 0% { opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* Reminder */
+        .reminder { background: #fff; border-radius: 14px; padding: 16px 18px; margin-bottom: 16px; border: 1px solid #f0e4d8; box-shadow: 0 2px 8px rgba(180,140,100,0.06); }
+        .reminder-item { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; font-size: 0.88em; }
+        .reminder-icon { flex-shrink: 0; }
+
+        /* Footer */
+        .footer { text-align: center; padding: 24px 20px 36px; color: #b8a090; font-size: 0.82em; }
+        .footer a { color: #c4916a; text-decoration: none; }
+
+        /* Driving detail toggle */
+        .driving-toggle { cursor: pointer; color: #c4916a; font-size: 0.82em; margin-top: 4px; display: inline-block; }
+        .driving-detail { display: none; font-size: 0.82em; color: #8a7060; margin-top: 4px; line-height: 1.6; padding: 8px 12px; background: #fdf8f3; border-radius: 8px; }
+        .driving-detail.show { display: block; }
+
+        @media (max-width: 400px) {
+            .parking-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.4em; }
+            .timeline { flex-direction: column; align-items: center; gap: 16px; }
+            .timeline::before { display: none; }
+        }
+        @media print {
+            @page { size: A4 portrait; margin: 10mm; }
+            body { background: #fff; }
+            .hero { padding: 20px; }
+            .nav-links { display: none; }
+            .map-container iframe { height: 200px; }
+            .map-actions { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>L & J Wedding</h1>
+        <div class="subtitle">交通資訊</div>
+        <div class="venue">新莊晶宴會館 1F B劇場</div>
+        <div class="date">2026 年 3 月 21 日（六）</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="https://rochunchih.github.io/wedding-seating/">座位表</a>
+        <a class="active" href="#">交通資訊</a>
+        <a href="https://pse.is/LJWedding" target="_blank">婚禮邀請卡</a>
+    </div>
+
+    <div class="container">
+        <!-- Timeline -->
+        <div class="timeline-section">
+            <div class="section-title"><span class="icon">🕐</span> 當日時程</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">🥂</div>
+                    <div class="timeline-time">11:45</div>
+                    <div class="timeline-label">雞尾酒 + 點心</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">💒</div>
+                    <div class="timeline-time">12:30</div>
+                    <div class="timeline-label">婚宴開場</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="address-bar" onclick="copyAddress()">
+            <span class="pin">📍</span>
+            <div class="addr">
+                <div class="addr-name">新莊晶宴會館</div>
+                <div class="addr-text">新北市新莊區思源路746䙟</div>
+            </div>
+            <span class="copy-icon">📋 複製</span>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8!2d121.4372!3d25.0478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7e9a2c5b8e7%3A0x8c7f5a2b8d9e4f6c!2z5paw6I6K5pm25a604pyoIFNpbmNodWFuZw!5e0!3m2!1szh-TW!2stw!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="map-actions">
+            <a class="map-btn primary" href="https://maps.google.com/?q=新莊晶宴會館" target="_blank">🗺️ 開啟 Google Maps</a>
+            <a class="map-btn" href="https://maps.apple.com/?q=新莊晶宴會館" target="_blank">🍎 Apple Maps</a>
+        </div>
+
+        <!-- Parking -->
+        <div style="margin-top: 20px;">
+            <div class="section-title"><span class="icon">🅿️</span> 停車資訊</div>
+        </div>
+        <div class="parking-box">
+            <div class="parking-title">🏢 晶宴會館停車場</div>
+            <div class="parking-note">
+                本館<strong>五樓</strong>備有停車場（7-11 路口轉入）。<br>
+                車位有限，<strong>建議早點抵達</strong>，還可以先享用 11:45 供應的雞尾酒與點心！
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🏥 台北醫院停車場（備用）<span class="badge badge-blue">對面</span></div>
+            <div style="font-size:0.9em; color:#6a5a4a; margin-bottom: 10px;">若晶宴停車場已滿，可停對面的<strong>台北醫院停車場</strong></div>
+            <div class="parking-grid">
+                <div class="parking-item">
+                    <div class="label">第一小時</div>
+                    <div class="value">40 元</div>
+                </div>
+                <div class="parking-item">
+                    <div class="label">之後每半小時</div>
+                    <div class="value">20 元</div>
+                </div>
+            </div>
+            <div class="coupon-box">
+                <div class="coupon-title">🎫 宴會停車折抵券</div>
+                <div class="coupon-detail">每台車可獲得現金折抵券</div>
+                <div class="coupon-amount">60 元 / 台</div>
+                <div class="coupon-sub">兩台車 120 元，依此類推<br>宴會館工作人員會至各桌確認車輛數量並發放</div>
+            </div>
+        </div>
+
+        <!-- Transportation -->
+        <div class="section-title" style="margin-top: 20px;"><span class="icon">🚇</span> 大眾運輸</div>
+
+        <div class="card">
+            <div class="card-title">捷運 <span class="badge badge-orange">推薦</span></div>
+            <div class="route-item">
+                <div class="route-icon">🟠</div>
+                <div class="route-detail">
+                    <div class="route-name">中和新蘆線（橘線）「頭前庄站」</div>
+                    <div class="route-desc">1 號出口，步行約 5 分鐘</div>
+                </div>
+            </div>
+            <div class="route-item">
+                <div class="route-icon">🟡</div>
+                <div class="route-detail">
+                    <div class="route-name">環狀線（黃線）「頭前庄站」</div>
+                    <div class="route-desc">1 號出口，步行約 5 分鐘</div>
+                </div>
+            </div>
+            <div class="route-item">
+                <div class="route-icon">🟣</div>
+                <div class="route-detail">
+                    <div class="route-name">桃園機場捷運「A3 新北產業園區站」</div>
+                    <div class="route-desc">出口轉乘 982 公車（往板橋方向）至台北醫院站</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">公車</div>
+            <div class="route-item">
+                <div class="route-icon">🚌</div>
+                <div class="route-detail">
+                    <div class="route-name">台北醫院站（思源路）</div>
+                    <div class="bus-tags">
+                        <span class="bus-tag">99</span>
+                        <span class="bus-tag">257</span>
+                        <span class="bus-tag">805</span>
+                        <span class="bus-tag">813</span>
+                        <span class="bus-tag">845</span>
+                        <span class="bus-tag">918</span>
+                        <span class="bus-tag">920</span>
+                        <span class="bus-tag">藍18</span>
+                        <span class="bus-tag">982 環狀線先導公車</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">自行開車</div>
+            <div class="route-item">
+                <div class="route-icon">🛣️</div>
+                <div class="route-detail">
+                    <div class="route-name">中山高速公路</div>
+                    <div class="route-desc">五股交流道下往新莊方向</div>
+                    <span class="driving-toggle" onclick="toggleDriving('d1')">▶ 查看詳細路線</span>
+                    <div class="driving-detail" id="d1">新五路 → 上台一線高架橋 → 下思源路出口 → 切至外側車道行於思源路口右轉後直行 → 於大漢橋下迴轉即可至本會館</div>
+                </div>
+            </div>
+            <div class="route-item">
+                <div class="route-icon">🛣️</div>
+                <div class="route-detail">
+                    <div class="route-name">北二高</div>
+                    <div class="route-desc">中和交流道下往板橋方向</div>
+                    <span class="driving-toggle" onclick="toggleDriving('d2')">▶ 查看詳細路線</span>
+                    <div class="driving-detail" id="d2">台64線東西向快速公路八里新店線 → 於大漢橋切慢車道下思源路即可抵達</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reminders -->
+        <div class="section-title" style="margin-top: 20px;"><span class="icon">💡</span> 溫馨提醒</div>
+        <div class="reminder">
+            <div class="reminder-item"><span class="reminder-icon">🐾</span> 禁帶寵物進場（導盲犬例外）</div>
+            <div class="reminder-item"><span class="reminder-icon">🥂</span> 11:45 起供應雞尾酒與點心，歡迎提早入場享用</div>
+            <div class="reminder-item"><span class="reminder-icon">🚗</span> 停車位有限，建議搭乘大眾運輸或提早到場停車</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://rochunchih.github.io/wedding-seating/">📋 查看座位表</a>
+        &nbsp;·&nbsp;
+        <a href="https://pse.is/LJWedding" target="_blank">💌 婚禮邀請卡</a>
+        <div style="margin-top: 10px;">L & J · 2026.03.21</div>
+    </div>
+
+    <div class="copied-toast" id="toast">已複製地址！</div>
+
+    <script>
+    function copyAddress() {
+        var addr = '新北市新莊區思源路746䙟';
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(addr).then(function() { showToast(); });
+        } else {
+            var ta = document.createElement('textarea');
+            ta.value = addr;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast();
+        }
+    }
+    function showToast() {
+        var t = document.getElementById('toast');
+        t.classList.remove('show');
+        void t.offsetWidth;
+        t.classList.add('show');
+        setTimeout(function(){ t.classList.remove('show'); }, 1500);
+    }
+    function toggleDriving(id) {
+        var el = document.getElementById(id);
+        el.classList.toggle('show');
+        var toggle = el.previousElementSibling;
+        toggle.textContent = el.classList.contains('show') ? '▼ 收起路線' : '▶ 查看詳細路線';
+    }
+    </script>
+</body>
+</html>
