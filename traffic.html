@@ -176,93 +176,88 @@
                 <rect width="520" height="580" fill="#fdf8f0" rx="10"/>
 
                 <defs>
-                    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                        <path d="M0,0 L8,3 L0,6 Z" fill="#4a8a53"/>
+                    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <path d="M0,0 L10,3.5 L0,7 Z" fill="#4a8a53"/>
                     </marker>
                 </defs>
 
-                <!-- === ROADS === -->
+                <!-- === ROADS (drawn first, buildings on top) === -->
 
-                <!-- 思源路 (VERTICAL main road, north-south) -->
-                <rect x="228" y="0" width="34" height="580" fill="#f5e6b8" stroke="#d4b878" stroke-width="1.5"/>
-                <text x="245" y="555" text-anchor="middle" font-size="10" fill="#8a6a50" font-weight="600">思源路</text>
+                <!-- 思源路 (VERTICAL main road) -->
+                <rect x="215" y="0" width="40" height="580" fill="#f5e6b8" stroke="#d4b878" stroke-width="1.5"/>
+                <text x="235" y="555" text-anchor="middle" font-size="10" fill="#8a6a50" font-weight="600">思源路</text>
+                <text x="227" y="30" text-anchor="middle" font-size="11" fill="#b0a080">▲</text>
+                <text x="243" y="565" text-anchor="middle" font-size="11" fill="#b0a080">▼</text>
 
-                <!-- Road direction arrows -->
-                <text x="237" y="30" text-anchor="middle" font-size="11" fill="#b0a080">▲</text>
-                <text x="253" y="560" text-anchor="middle" font-size="11" fill="#b0a080">▼</text>
+                <!-- 化成路 (VERTICAL, east side) -->
+                <rect x="460" y="0" width="22" height="420" fill="#e8dcc8" stroke="#c4b090" stroke-width="1"/>
+                <text x="471" y="20" text-anchor="middle" font-size="9" fill="#8a7060">化成路</text>
 
-                <!-- 化成路 (VERTICAL road, east side, parallel to 思源路) -->
-                <rect x="440" y="0" width="20" height="400" fill="#e8dcc8" stroke="#c4b090" stroke-width="1"/>
-                <text x="450" y="20" text-anchor="middle" font-size="9" fill="#8a7060">化成路</text>
-
-                <!-- 復興路三段 (HORIZONTAL, top area) -->
+                <!-- 復興路三段 (HORIZONTAL, top) -->
                 <rect x="0" y="48" width="520" height="16" fill="#e0d4c0" stroke="#c4b090" stroke-width="0.5"/>
-                <text x="120" y="59" text-anchor="middle" font-size="9" fill="#a09080">復 興 路 三 段</text>
+                <text x="110" y="59" text-anchor="middle" font-size="9" fill="#a09080">復 興 路 三 段</text>
 
-                <!-- 巷子 alley (HORIZONTAL, connecting 思源路 to 化成路 at 7-11) -->
-                <rect x="262" y="120" width="178" height="14" fill="#ede4d4" stroke="#c4b090" stroke-width="0.5"/>
-                <text x="350" y="130" text-anchor="middle" font-size="7" fill="#a09080">巷 子</text>
+                <!-- ★ 巷子 (HORIZONTAL alley — wide & clear) -->
+                <rect x="255" y="142" width="205" height="22" fill="#f0e8d0" stroke="#c4b090" stroke-width="1.5"/>
+                <text x="360" y="157" text-anchor="middle" font-size="9" fill="#9a8a70" font-weight="500">← 巷 子 →</text>
 
-                <!-- 長青街 (south of hospital) -->
-                <rect x="0" y="380" width="228" height="12" fill="#ede4d4" stroke="#c4b090" stroke-width="0.5"/>
-                <text x="110" y="389" text-anchor="middle" font-size="8" fill="#a09080">長青街</text>
+                <!-- 長青街 -->
+                <rect x="0" y="395" width="215" height="12" fill="#ede4d4" stroke="#c4b090" stroke-width="0.5"/>
+                <text x="105" y="404" text-anchor="middle" font-size="8" fill="#a09080">長青街</text>
 
                 <!-- === EAST SIDE of 思源路 (N→S): 7-11 → NISSAN → 晶宴 === -->
 
-                <!-- 7-ELEVEN (northernmost, at alley corner) -->
-                <rect x="270" y="100" width="55" height="30" fill="#3c8a3c" rx="4"/>
-                <text x="297" y="115" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">7-ELEVEN</text>
-                <text x="297" y="126" text-anchor="middle" font-size="7" fill="#d0ffd0">便利商店</text>
+                <!-- 7-ELEVEN (at alley corner, ABOVE the alley) -->
+                <rect x="265" y="105" width="60" height="33" fill="#3c8a3c" rx="5"/>
+                <text x="295" y="121" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">7-ELEVEN</text>
+                <text x="295" y="133" text-anchor="middle" font-size="7" fill="#d0ffd0">便利商店</text>
 
-                <!-- 五樓停車場入口 (east of 7-11, turn right into alley) -->
-                <rect x="345" y="95" width="80" height="40" fill="#4a8a53" rx="6" stroke="#3a7a43" stroke-width="1.5"/>
-                <text x="385" y="111" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">五樓停車場</text>
-                <text x="385" y="123" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">入口處</text>
-                <text x="385" y="133" text-anchor="middle" font-size="7" fill="#d0ffd0">免費停車</text>
+                <!-- 五樓停車場入口 (further east along the alley, BELOW the alley) -->
+                <rect x="355" y="168" width="90" height="42" fill="#4a8a53" rx="6" stroke="#3a7a43" stroke-width="1.5"/>
+                <text x="400" y="184" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">五樓停車場</text>
+                <text x="400" y="197" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">入口處</text>
+                <text x="400" y="208" text-anchor="middle" font-size="7" fill="#d0ffd0">免費停車</text>
 
-                <!-- Arrow: 7-11 巷口右轉進入停車場 -->
-                <path d="M 320 120 L 345 115" stroke="#4a8a53" stroke-width="2.5" fill="none" stroke-dasharray="5,3" marker-end="url(#arrowGreen)"/>
-                <text x="310" y="145" text-anchor="middle" font-size="7.5" fill="#4a8a53" font-weight="600">← 巷口右轉</text>
-                <text x="310" y="155" text-anchor="middle" font-size="7.5" fill="#4a8a53" font-weight="600">進入停車場</text>
+                <!-- Driving path: down 思源路 → right turn into alley → arrive at parking -->
+                <path d="M 245 90 L 245 152 L 390 152 L 390 168" stroke="#4a8a53" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
+                <text x="280" y="90" text-anchor="start" font-size="8" fill="#4a8a53" font-weight="600">沿思源路南下</text>
+                <text x="305" y="170" text-anchor="middle" font-size="8" fill="#4a8a53" font-weight="600">巷口右轉 →</text>
 
-                <!-- NISSAN / LUXGEN (between 7-11 and 晶宴) -->
-                <rect x="270" y="160" width="70" height="38" fill="#555" rx="4"/>
-                <text x="305" y="178" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN</text>
-                <text x="305" y="190" text-anchor="middle" font-size="8" fill="#ddd">LUXGEN</text>
+                <!-- NISSAN / LUXGEN (between 7-11 and 晶宴, hugging 思源路) -->
+                <rect x="265" y="185" width="75" height="35" fill="#555" rx="4"/>
+                <text x="302" y="203" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN / LUXGEN</text>
+                <text x="302" y="215" text-anchor="middle" font-size="7" fill="#ccc">汽車展示中心</text>
 
-                <!-- 晶宴會館 (main venue) - prominent -->
-                <rect x="270" y="220" width="120" height="80" fill="#c4916a" rx="8" stroke="#a07050" stroke-width="2.5"/>
-                <text x="330" y="244" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">晶宴會館</text>
-                <text x="330" y="260" text-anchor="middle" font-size="9" fill="#ffe8d0">峇里斯莊園</text>
-                <text x="330" y="276" text-anchor="middle" font-size="9" fill="#ffe8d0">1F B劇場</text>
-                <text x="330" y="292" text-anchor="middle" font-size="8" fill="#ffe0c0">思源路40號</text>
-                <!-- Star marker -->
-                <text x="330" y="212" text-anchor="middle" font-size="22">⭐</text>
+                <!-- 晶宴會館 (main venue) -->
+                <rect x="265" y="240" width="130" height="85" fill="#c4916a" rx="8" stroke="#a07050" stroke-width="2.5"/>
+                <text x="330" y="262" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">晶宴會館</text>
+                <text x="330" y="279" text-anchor="middle" font-size="9" fill="#ffe8d0">峇里斯莊園</text>
+                <text x="330" y="294" text-anchor="middle" font-size="9" fill="#ffe8d0">1F B劇場</text>
+                <text x="330" y="310" text-anchor="middle" font-size="8" fill="#ffe0c0">思源路40號</text>
+                <text x="330" y="232" text-anchor="middle" font-size="22">⭐</text>
 
-                <!-- === WEST SIDE (LEFT of 思源路) === -->
+                <!-- === WEST SIDE === -->
 
-                <!-- 台北醫院 (directly across from 晶宴) -->
-                <rect x="50" y="180" width="165" height="120" fill="#5a8ec8" rx="6" opacity="0.85" stroke="#4070a0" stroke-width="1.5"/>
-                <text x="132" y="220" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">衛生福利部</text>
-                <text x="132" y="243" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">臺北醫院</text>
-                <text x="132" y="265" text-anchor="middle" font-size="9" fill="#d0e0ff">（備用停車場）</text>
-                <text x="132" y="282" text-anchor="middle" font-size="8" fill="#b0d0ff">← 在晶宴對面</text>
+                <!-- 台北醫院 (directly across) -->
+                <rect x="35" y="200" width="170" height="120" fill="#5a8ec8" rx="6" opacity="0.85" stroke="#4070a0" stroke-width="1.5"/>
+                <text x="120" y="240" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">衛生福利部</text>
+                <text x="120" y="263" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">臺北醫院</text>
+                <text x="120" y="285" text-anchor="middle" font-size="9" fill="#d0e0ff">（備用停車場）</text>
+                <text x="120" y="302" text-anchor="middle" font-size="8" fill="#b0d0ff">← 在晶宴對面</text>
 
-                <!-- === MRT STATION (SOUTH of venue) === -->
+                <!-- === MRT STATION (SOUTH) === -->
 
-                <!-- 捷運頭前庄站 (south of venue) -->
-                <rect x="280" y="400" width="120" height="42" fill="#e8945a" rx="6" stroke="#d08040" stroke-width="1.5"/>
-                <text x="340" y="418" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">🚇 頭前庄站</text>
-                <text x="340" y="432" text-anchor="middle" font-size="8" fill="#fff">橘線｜黃線</text>
-                <!-- Walking path from station to venue -->
-                <path d="M 330 400 L 330 300" stroke="#e8945a" stroke-width="2" stroke-dasharray="4,3"/>
-                <text x="345" y="360" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">🚶 1號出口</text>
-                <text x="345" y="372" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">步行約5分鐘</text>
+                <rect x="275" y="420" width="125" height="42" fill="#e8945a" rx="6" stroke="#d08040" stroke-width="1.5"/>
+                <text x="337" y="438" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">🚇 頭前庄站</text>
+                <text x="337" y="452" text-anchor="middle" font-size="8" fill="#fff">橘線｜黃線</text>
+                <path d="M 330 420 L 330 325" stroke="#e8945a" stroke-width="2" stroke-dasharray="4,3"/>
+                <text x="345" y="378" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">🚶 1號出口</text>
+                <text x="345" y="390" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">步行約5分鐘</text>
 
                 <!-- === DIRECTION LABELS === -->
-                <text x="245" y="16" text-anchor="middle" font-size="10" fill="#a09080" font-weight="500">↑ 五股交流道 / 新五路</text>
-                <text x="20" y="440" font-size="9" fill="#a09080">← 大漢橋</text>
-                <text x="20" y="455" font-size="9" fill="#a09080">往台北・三重</text>
+                <text x="235" y="16" text-anchor="middle" font-size="10" fill="#a09080" font-weight="500">↑ 五股交流道 / 新五路</text>
+                <text x="18" y="450" font-size="9" fill="#a09080">← 大漢橋</text>
+                <text x="18" y="465" font-size="9" fill="#a09080">往台北・三重</text>
                 <text x="400" y="530" font-size="9" fill="#a09080">往板橋 →</text>
                 <text x="400" y="545" font-size="9" fill="#a09080">↓ 中和交流道</text>
 
