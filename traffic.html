@@ -197,36 +197,34 @@
                 <rect x="0" y="48" width="520" height="16" fill="#e0d4c0" stroke="#c4b090" stroke-width="0.5"/>
                 <text x="110" y="59" text-anchor="middle" font-size="9" fill="#a09080">復 興 路 三 段</text>
 
-                <!-- ★ 巷子 (HORIZONTAL alley — wide & clear) -->
+                <!-- === EAST SIDE of 思源路 (N→S): 停車場 → 巷子(7-11在角落) → NISSAN → 晶宴 === -->
+
+                <!-- 五樓停車場 (NORTH of alley) -->
+                <rect x="300" y="90" width="100" height="48" fill="#4a8a53" rx="6" stroke="#3a7a43" stroke-width="1.5"/>
+                <text x="350" y="109" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">五樓停車場</text>
+                <text x="350" y="122" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">入口處</text>
+                <text x="350" y="134" text-anchor="middle" font-size="7" fill="#d0ffd0">免費停車</text>
+
+                <!-- ★ 巷子 (HORIZONTAL alley — SOUTH of parking) -->
                 <rect x="255" y="142" width="205" height="22" fill="#f0e8d0" stroke="#c4b090" stroke-width="1.5"/>
                 <text x="360" y="157" text-anchor="middle" font-size="9" fill="#9a8a70" font-weight="500">← 巷 子 →</text>
+
+                <!-- 7-ELEVEN (at corner: south side of alley, next to 思源路) -->
+                <rect x="260" y="167" width="55" height="28" fill="#3c8a3c" rx="5"/>
+                <text x="287" y="183" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">7-11</text>
+
+                <!-- Driving path: down 思源路 → 7-11角落右轉巷子 → north into parking -->
+                <path d="M 245 80 L 245 152 L 350 152 L 350 138" stroke="#4a8a53" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
+                <text x="270" y="78" text-anchor="start" font-size="8" fill="#4a8a53" font-weight="600">沿思源路南下 ↓</text>
+                <text x="330" y="140" text-anchor="end" font-size="7" fill="#4a8a53" font-weight="600">↑ 停車場入口</text>
 
                 <!-- 長青街 -->
                 <rect x="0" y="395" width="215" height="12" fill="#ede4d4" stroke="#c4b090" stroke-width="0.5"/>
                 <text x="105" y="404" text-anchor="middle" font-size="8" fill="#a09080">長青街</text>
 
-                <!-- === EAST SIDE of 思源路 (N→S): 7-11 → NISSAN → 晶宴 === -->
-
-                <!-- 7-ELEVEN (at alley corner, ABOVE the alley) -->
-                <rect x="265" y="105" width="60" height="33" fill="#3c8a3c" rx="5"/>
-                <text x="295" y="121" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">7-ELEVEN</text>
-                <text x="295" y="133" text-anchor="middle" font-size="7" fill="#d0ffd0">便利商店</text>
-
-                <!-- 五樓停車場入口 (further east along the alley, BELOW the alley) -->
-                <rect x="355" y="168" width="90" height="42" fill="#4a8a53" rx="6" stroke="#3a7a43" stroke-width="1.5"/>
-                <text x="400" y="184" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">五樓停車場</text>
-                <text x="400" y="197" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">入口處</text>
-                <text x="400" y="208" text-anchor="middle" font-size="7" fill="#d0ffd0">免費停車</text>
-
-                <!-- Driving path: down 思源路 → right turn into alley → arrive at parking -->
-                <path d="M 245 90 L 245 152 L 390 152 L 390 168" stroke="#4a8a53" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
-                <text x="280" y="90" text-anchor="start" font-size="8" fill="#4a8a53" font-weight="600">沿思源路南下</text>
-                <text x="305" y="170" text-anchor="middle" font-size="8" fill="#4a8a53" font-weight="600">巷口右轉 →</text>
-
-                <!-- NISSAN / LUXGEN (between 7-11 and 晶宴, hugging 思源路) -->
-                <rect x="265" y="185" width="75" height="35" fill="#555" rx="4"/>
-                <text x="302" y="203" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN / LUXGEN</text>
-                <text x="302" y="215" text-anchor="middle" font-size="7" fill="#ccc">汽車展示中心</text>
+                <!-- NISSAN / LUXGEN (south of 7-11, hugging 思源路) -->
+                <rect x="265" y="200" width="75" height="30" fill="#555" rx="4"/>
+                <text x="302" y="217" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN / LUXGEN</text>
 
                 <!-- 晶宴會館 (main venue) -->
                 <rect x="265" y="240" width="130" height="85" fill="#c4916a" rx="8" stroke="#a07050" stroke-width="2.5"/>
