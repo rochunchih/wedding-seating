@@ -119,7 +119,7 @@
     <div class="hero">
         <h1>L & J Wedding</h1>
         <div class="subtitle">交通資訊</div>
-        <div class="venue">新莊晶家會館 1F B劇場</div>
+        <div class="venue">新莊晶宴會館 1F B劇場</div>
         <div class="date">2026 年 3 月 21 日（六）</div>
     </div>
 
@@ -162,8 +162,152 @@
             <iframe src="https://maps.google.com/maps?q=%E6%96%B0%E8%8E%8A%E6%99%B6%E5%AE%B4%E6%9C%83%E9%A4%A8&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="map-actions">
-            <a class="map-btn primary" href="https://maps.google.com/?q=新莊晶宴會館" target="_blank">🗺️ 開啟 Google Maps</a>
-            <a class="map-btn" href="https://maps.apple.com/?q=新莊晶家會館" target="_blank">🍎 Apple Maps</a>
+            <a class="map-btn primary" href="https://www.google.com/maps/search/%E6%96%B0%E8%8E%8A%E6%99%B6%E5%AE%B4%E6%9C%83%E9%A4%A8" target="_blank">🗺️ 開啟 Google Maps</a>
+            <a class="map-btn" href="https://maps.apple.com/?q=%E6%96%B0%E8%8E%8A%E6%99%B6%E5%AE%B4%E6%9C%83%E9%A4%A8" target="_blank">🍎 Apple Maps</a>
+        </div>
+
+        <!-- Illustrated Area Map -->
+        <div style="margin-top: 20px;">
+            <div class="section-title"><span class="icon">🗺️</span> 周邊地圖與停車場位置</div>
+        </div>
+        <div class="card" style="padding: 12px; overflow-x: auto;">
+            <svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; font-family:'Noto Sans TC',sans-serif;">
+                <!-- Background -->
+                <rect width="600" height="520" fill="#fdf8f0" rx="10"/>
+
+                <!-- Roads -->
+                <!-- 思源路 (horizontal, main road) -->
+                <rect x="0" y="220" width="600" height="28" fill="#e8d5c0" stroke="#c4a080" stroke-width="1"/>
+                <text x="300" y="238" text-anchor="middle" font-size="11" fill="#8a6a50" font-weight="500">思 源 路</text>
+
+                <!-- 化成路 (vertical) -->
+                <rect x="460" y="0" width="22" height="520" fill="#e8d5c0" stroke="#c4a080" stroke-width="1"/>
+                <text x="471" y="120" text-anchor="middle" font-size="10" fill="#8a6a50" writing-mode="tb" font-weight="500">化成路</text>
+
+                <!-- 中正路 (horizontal, below) -->
+                <rect x="0" y="380" width="600" height="22" fill="#ddd0c0" stroke="#c4a080" stroke-width="0.5"/>
+                <text x="300" y="395" text-anchor="middle" font-size="10" fill="#a09080">中 正 路</text>
+
+                <!-- 復興路 (horizontal, above) -->
+                <rect x="0" y="100" width="600" height="18" fill="#ddd0c0" stroke="#c4a080" stroke-width="0.5"/>
+                <text x="300" y="113" text-anchor="middle" font-size="10" fill="#a09080">復 興 路</text>
+
+                <!-- 新五路 (top area) -->
+                <rect x="0" y="35" width="600" height="18" fill="#ddd0c0" stroke="#c4a080" stroke-width="0.5"/>
+                <text x="300" y="48" text-anchor="middle" font-size="10" fill="#a09080">新 五 路 → 台一線高架橋</text>
+
+                <!-- Small vertical roads -->
+                <rect x="180" y="100" width="14" height="280" fill="#ede0d0" stroke="#c4a080" stroke-width="0.5"/>
+                <rect x="320" y="100" width="14" height="280" fill="#ede0d0" stroke="#c4a080" stroke-width="0.5"/>
+
+                <!-- === KEY BUILDINGS === -->
+
+                <!-- 晶宴會館 (main venue) - prominent -->
+                <rect x="210" y="260" width="100" height="65" fill="#c4916a" rx="6" stroke="#a07050" stroke-width="2"/>
+                <text x="260" y="284" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">晶宴會館</text>
+                <text x="260" y="302" text-anchor="middle" font-size="10" fill="#ffe8d0">1F B劇場</text>
+                <text x="260" y="316" text-anchor="middle" font-size="9" fill="#ffe0c0">思源路746號</text>
+
+                <!-- Star marker for venue -->
+                <text x="260" y="252" text-anchor="middle" font-size="22">⭐</text>
+
+                <!-- 7-ELEVEN -->
+                <rect x="210" y="165" width="55" height="35" fill="#3c8a3c" rx="4"/>
+                <text x="237" y="180" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">7-ELEVEN</text>
+                <text x="237" y="192" text-anchor="middle" font-size="8" fill="#d0ffd0">便利商店</text>
+
+                <!-- 五樓停車場入口 arrow -->
+                <rect x="140" y="260" width="60" height="50" fill="#4a8a53" rx="6" stroke="#3a7a43" stroke-width="1.5"/>
+                <text x="170" y="278" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">五樓</text>
+                <text x="170" y="292" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">停車場</text>
+                <text x="170" y="304" text-anchor="middle" font-size="8" fill="#d0ffd0">免費停車</text>
+                <!-- Arrow pointing to parking -->
+                <path d="M 237 200 L 210 255" stroke="#4a8a53" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+                <text x="205" y="210" text-anchor="middle" font-size="8" fill="#4a8a53" font-weight="500">7-11路口轉入</text>
+
+                <defs>
+                    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <path d="M0,0 L8,3 L0,6 Z" fill="#4a8a53"/>
+                    </marker>
+                    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <path d="M0,0 L8,3 L0,6 Z" fill="#c05050"/>
+                    </marker>
+                </defs>
+
+                <!-- NISSAN / LUXGEN -->
+                <rect x="140" y="165" width="55" height="35" fill="#555" rx="4"/>
+                <text x="167" y="180" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN</text>
+                <text x="167" y="192" text-anchor="middle" font-size="8" fill="#ddd">LUXGEN</text>
+
+                <!-- 台北醫院 (across the street) -->
+                <rect x="210" y="140" width="100" height="0" fill="none"/>
+                <rect x="100" y="260" width="0" height="0" fill="none"/>
+                <rect x="60" y="260" width="65" height="50" fill="#5a8ec8" rx="5" opacity="0.85"/>
+                <text x="92" y="282" text-anchor="middle" font-size="11" fill="#fff" font-weight="600">台北醫院</text>
+                <text x="92" y="296" text-anchor="middle" font-size="8" fill="#d0e0ff">（備用停車）</text>
+
+                <!-- 新莊綜合體育場 -->
+                <rect x="30" y="130" width="80" height="40" fill="#ddd0c0" rx="4" stroke="#c4b090" stroke-width="1"/>
+                <text x="70" y="148" text-anchor="middle" font-size="8" fill="#8a7060">新莊市</text>
+                <text x="70" y="160" text-anchor="middle" font-size="8" fill="#8a7060">綜合體育場</text>
+
+                <!-- 捷運頭前庄站 -->
+                <rect x="350" y="280" width="95" height="45" fill="#e8945a" rx="6" stroke="#d08040" stroke-width="1.5"/>
+                <text x="397" y="298" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">🚇 頭前庄站</text>
+                <text x="397" y="312" text-anchor="middle" font-size="8" fill="#fff">1號出口｜步行5分鐘</text>
+
+                <!-- Walking path from station to venue -->
+                <line x1="350" y1="295" x2="315" y2="290" stroke="#e8945a" stroke-width="2" stroke-dasharray="4,3"/>
+                <text x="335" y="278" text-anchor="middle" font-size="8" fill="#e8945a">🚶 5min</text>
+
+                <!-- MRT lines labels -->
+                <rect x="350" y="330" width="85" height="16" fill="#e8945a" rx="3" opacity="0.8"/>
+                <text x="392" y="342" text-anchor="middle" font-size="8" fill="#fff">橘線｜黃線</text>
+
+                <!-- 捷運板南線 新埔站 (further away) -->
+                <rect x="350" y="410" width="95" height="35" fill="#4488cc" rx="5"/>
+                <text x="397" y="427" text-anchor="middle" font-size="9" fill="#fff" font-weight="500">🚇 新埔站（藍線）</text>
+                <text x="397" y="440" text-anchor="middle" font-size="8" fill="#d0e8ff">5號出口轉公車</text>
+
+                <!-- Direction labels -->
+                <!-- 往五股交流道 -->
+                <text x="60" y="25" font-size="10" fill="#a09080">↑ 五股交流道</text>
+
+                <!-- 往台北/三重 -->
+                <text x="30" y="460" font-size="9" fill="#a09080">← 重新橋・往台北三重</text>
+
+                <!-- 往板橋 -->
+                <text x="400" y="480" font-size="9" fill="#a09080">往板橋 →</text>
+
+                <!-- 中和交流道 -->
+                <text x="400" y="500" font-size="9" fill="#a09080">↓ 中和交流道</text>
+
+                <!-- 大漢橋 label -->
+                <rect x="30" y="345" width="60" height="20" fill="#ddd0c0" rx="3"/>
+                <text x="60" y="359" text-anchor="middle" font-size="9" fill="#8a7060">大漢橋</text>
+
+                <!-- 中山高架橋 label -->
+                <rect x="200" y="60" width="80" height="18" fill="#ddd0c0" rx="3"/>
+                <text x="240" y="73" text-anchor="middle" font-size="9" fill="#8a7060">中山高架橋</text>
+
+                <!-- North arrow -->
+                <text x="555" y="30" font-size="14" fill="#a09080" font-weight="700">↑ 北</text>
+
+                <!-- Legend -->
+                <rect x="460" y="400" width="130" height="110" fill="#fff" rx="8" stroke="#e0d0c0" stroke-width="1"/>
+                <text x="470" y="418" font-size="9" fill="#8a7060" font-weight="600">圖 例</text>
+                <rect x="470" y="425" width="12" height="12" fill="#c4916a" rx="2"/>
+                <text x="488" y="435" font-size="8" fill="#6a5a4a">晶宴會館</text>
+                <rect x="470" y="443" width="12" height="12" fill="#4a8a53" rx="2"/>
+                <text x="488" y="453" font-size="8" fill="#6a5a4a">免費停車場入口</text>
+                <rect x="470" y="461" width="12" height="12" fill="#e8945a" rx="2"/>
+                <text x="488" y="471" font-size="8" fill="#6a5a4a">捷運站</text>
+                <rect x="470" y="479" width="12" height="12" fill="#5a8ec8" rx="2"/>
+                <text x="488" y="489" font-size="8" fill="#6a5a4a">台北醫院</text>
+                <rect x="470" y="497" width="12" height="12" fill="#3c8a3c" rx="2"/>
+                <text x="488" y="507" font-size="8" fill="#6a5a4a">7-ELEVEN</text>
+            </svg>
+            <div style="text-align:center; font-size:0.78em; color:#a09080; margin-top:6px;">※ 此圖為示意圖，實際位置請參考 Google Maps</div>
         </div>
 
         <!-- Parking -->
@@ -171,31 +315,19 @@
             <div class="section-title"><span class="icon">🅿️</span> 停車資訊</div>
         </div>
         <div class="parking-box">
-            <div class="parking-title">🏢 晶宴會館停車場</div>
+            <div class="parking-title">🏢 晶宴會館停車場 <span style="background:#4a8a53; color:#fff; font-size:0.7em; padding:2px 10px; border-radius:10px; font-weight:400;">免費停車</span></div>
             <div class="parking-note">
-                本館<strong>五樓</strong>備有停車場（7-11 路口轉入）。<br>
+                本館<strong>五樓</strong>備有<strong>免費停車場</strong>（7-11 路口轉入）。<br>
                 車位有限，<strong>建議早點抵達</strong>，還可以先享用 11:45 供應的雞尾酒與點心！
             </div>
         </div>
 
         <div class="card">
             <div class="card-title">🏥 台北醫院停車場（備用）<span class="badge badge-blue">對面</span></div>
-            <div style="font-size:0.9em; color:#6a5a4a; margin-bottom: 10px;">若晶家停車場已滿，可停對面的<strong>台北醫陡停車場</strong></div>
-            <div class="parking-grid">
-                <div class="parking-item">
-                    <div class="label">第一小時</div>
-                    <div class="value">40 元</div>
-                </div>
-                <div class="parking-item">
-                    <div class="label">之後每半小時</div>
-                    <div class="value">20 元</div>
-                </div>
-            </div>
-            <div class="coupon-box">
-                <div class="coupon-title">🎫 宴會停車折抵券</div>
-                <div class="coupon-detail">每台車可獲得現金折抵券</div>
-                <div class="coupon-amount">60 元 / 台</div>
-                <div class="coupon-sub">兩台車 120 元，依此類推<br>宴會餡工作人員會至各框確認車輛數量並發放</div>
+            <div style="font-size:0.88em; color:#8a7060; margin-bottom: 8px;">若晶宴停車場已滿，對面的台北醫院也可停車</div>
+            <div style="font-size:0.82em; color:#a09080; margin-bottom: 8px;">收費參考：第一小時 40 元，之後每半小時 20 元</div>
+            <div style="background:#f8f4ef; border-radius:10px; padding:12px 14px; font-size:0.85em; color:#6a5a4a;">
+                🎫 宴會館備有<strong>停車折抵刴</strong>（每台車 60 元），工作人員會至各桌確認車輛數量並發放
             </div>
         </div>
 
@@ -216,6 +348,22 @@
                 <div class="route-detail">
                     <div class="route-name">環狀線（黃線）「頭前庄站」</div>
                     <div class="route-desc">1 號出口，步行約 5 分鐘</div>
+                </div>
+            </div>
+            <div class="route-item">
+                <div class="route-icon">🔵</div>
+                <div class="route-detail">
+                    <div class="route-name">板南線（藍線）「新埔站」</div>
+                    <div class="route-desc">5 號出口，轉乘下列公車至台北醫院站</div>
+                    <div class="bus-tags" style="margin-top:4px;">
+                        <span class="bus-tag">813</span>
+                        <span class="bus-tag">845</span>
+                        <span class="bus-tag">99</span>
+                        <span class="bus-tag">918</span>
+                        <span class="bus-tag">920</span>
+                        <span class="bus-tag">藍18</span>
+                        <span class="bus-tag">982</span>
+                    </div>
                 </div>
             </div>
             <div class="route-item">
@@ -256,7 +404,7 @@
                     <div class="route-name">中山高速公路</div>
                     <div class="route-desc">五股交流道下往新莊方向</div>
                     <span class="driving-toggle" onclick="toggleDriving('d1')">▶ 查看詳細路線</span>
-                    <div class="driving-detail" id="d1">新五路 → 上台一線高架橋 → 下思源路出口 → 切至外側車道行斜思源路口右轉後直行 → 於大湢橋下迴轉即可至本會館</div>
+                    <div class="driving-detail" id="d1">新五路 → 上台一線高架橋 → 下思源路出口 → 切至外側車道行於思源路口右轉後直行 → 於大漢橋下迴轉即可至本會館</div>
                 </div>
             </div>
             <div class="route-item">
@@ -271,9 +419,9 @@
         </div>
 
         <!-- Reminders -->
-        <div class="section-title" style="margin-top: 20px;"><span class="icon">💡</span> 渫馨提醒</div>
+        <div class="section-title" style="margin-top: 20px;"><span class="icon">💡</span> 溫馨提醒</div>
         <div class="reminder">
-            <div class="reminder-item"><span class="reminder-icon">🐾</span> 禁帶寴物進場（導直犬例外）</div>
+            <div class="reminder-item"><span class="reminder-icon">🐾</span> 禁帶寵物進場（導盲犬例外）</div>
             <div class="reminder-item"><span class="reminder-icon">🥂</span> 11:45 起供應雞尾酒與點心，歡迎提早入場享用</div>
             <div class="reminder-item"><span class="reminder-icon">🚗</span> 停車位有限，建議搭乘大眾運輸或提早到場停車</div>
         </div>
@@ -290,7 +438,7 @@
 
     <script>
     function copyAddress() {
-        var addr = '新北市新莊區思源路;46号';
+        var addr = '新北市新莊區思源路746號';
         if (navigator.clipboard) {
             navigator.clipboard.writeText(addr).then(function() { showToast(); });
         } else {
@@ -314,7 +462,7 @@
         var el = document.getElementById(id);
         el.classList.toggle('show');
         var toggle = el.previousElementSibling;
-        toggle.textContent = el.classList.contains('show') ? '▼ 收起路線' : '▶ 查看詳細路線';
+        toggle.textContent = el.classList.contains('show') ? '▼ 收起路線' : '▶ 查看詳細路緦';
     }
     </script>
 </body>
