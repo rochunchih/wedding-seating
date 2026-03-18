@@ -171,9 +171,9 @@
             <div class="section-title"><span class="icon">🗺️</span> 周邊地圖與停車場位置</div>
         </div>
         <div class="card" style="padding: 12px; overflow-x: auto;">
-            <svg viewBox="0 0 520 580" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; font-family:'Noto Sans TC',sans-serif;">
+            <svg viewBox="0 0 520 600" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; font-family:'Noto Sans TC',sans-serif;">
                 <!-- Background -->
-                <rect width="520" height="580" fill="#fdf8f0" rx="10"/>
+                <rect width="520" height="600" fill="#fdf8f0" rx="10"/>
 
                 <defs>
                     <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
@@ -184,7 +184,7 @@
                 <!-- === ROADS (drawn first, buildings on top) === -->
 
                 <!-- 思源路 (VERTICAL main road) -->
-                <rect x="215" y="0" width="40" height="580" fill="#f5e6b8" stroke="#d4b878" stroke-width="1.5"/>
+                <rect x="215" y="0" width="40" height="600" fill="#f5e6b8" stroke="#d4b878" stroke-width="1.5"/>
                 <text x="235" y="555" text-anchor="middle" font-size="10" fill="#8a6a50" font-weight="600">思源路</text>
                 <text x="227" y="30" text-anchor="middle" font-size="11" fill="#b0a080">▲</text>
                 <text x="243" y="565" text-anchor="middle" font-size="11" fill="#b0a080">▼</text>
@@ -218,10 +218,6 @@
                 <text x="270" y="78" text-anchor="start" font-size="8" fill="#4a8a53" font-weight="600">沿思源路南下 ↓</text>
                 <text x="330" y="140" text-anchor="end" font-size="7" fill="#4a8a53" font-weight="600">↑ 停車場入口</text>
 
-                <!-- 長青街 -->
-                <rect x="0" y="395" width="215" height="12" fill="#ede4d4" stroke="#c4b090" stroke-width="0.5"/>
-                <text x="105" y="404" text-anchor="middle" font-size="8" fill="#a09080">長青街</text>
-
                 <!-- NISSAN / LUXGEN (south of 7-11, hugging 思源路) -->
                 <rect x="265" y="200" width="75" height="30" fill="#555" rx="4"/>
                 <text x="302" y="217" text-anchor="middle" font-size="8" fill="#fff" font-weight="500">NISSAN / LUXGEN</text>
@@ -243,42 +239,42 @@
                 <text x="120" y="285" text-anchor="middle" font-size="9" fill="#d0e0ff">（備用停車場）</text>
                 <text x="120" y="302" text-anchor="middle" font-size="8" fill="#b0d0ff">← 在晶宴對面</text>
 
-                <!-- 中正路 (HORIZONTAL, south near MRT) -->
-                <rect x="0" y="410" width="520" height="16" fill="#e0d4c0" stroke="#c4b090" stroke-width="0.5"/>
-                <text x="110" y="421" text-anchor="middle" font-size="9" fill="#a09080">中 正 路</text>
+                <!-- === MRT STATION (NORTH of 中正路) === -->
 
-                <!-- === MRT STATION (SOUTH) === -->
+                <rect x="275" y="380" width="125" height="42" fill="#e8945a" rx="6" stroke="#d08040" stroke-width="1.5"/>
+                <text x="337" y="398" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">🚇 頭前庄站</text>
+                <text x="337" y="412" text-anchor="middle" font-size="8" fill="#fff">中和新蘆線｜環狀線</text>
+                <path d="M 330 380 L 330 325" stroke="#e8945a" stroke-width="2" stroke-dasharray="4,3"/>
+                <text x="345" y="348" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">🚶 1號出口</text>
+                <text x="345" y="360" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">步行約5分鐘</text>
 
-                <rect x="275" y="430" width="125" height="42" fill="#e8945a" rx="6" stroke="#d08040" stroke-width="1.5"/>
-                <text x="337" y="448" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">🚇 頭前庄站</text>
-                <text x="337" y="462" text-anchor="middle" font-size="8" fill="#fff">橘線｜黃線</text>
-                <path d="M 330 430 L 330 325" stroke="#e8945a" stroke-width="2" stroke-dasharray="4,3"/>
-                <text x="345" y="378" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">🚶 1號出口</text>
-                <text x="345" y="390" text-anchor="start" font-size="8" fill="#e8945a" font-weight="500">步行約5分鐘</text>
+                <!-- 中正路 (HORIZONTAL, south of MRT exit) -->
+                <rect x="0" y="430" width="520" height="20" fill="#f5e6b8" stroke="#d4b878" stroke-width="1.5"/>
+                <text x="110" y="444" text-anchor="middle" font-size="10" fill="#8a6a50" font-weight="600">中 正 路</text>
 
                 <!-- === DIRECTION LABELS === -->
                 <text x="235" y="16" text-anchor="middle" font-size="10" fill="#a09080" font-weight="500">↑ 五股交流道 / 新五路</text>
-                <text x="18" y="450" font-size="9" fill="#a09080">← 往輔大</text>
-                <text x="18" y="465" font-size="9" fill="#a09080">新莊市區</text>
-                <text x="420" y="450" font-size="9" fill="#a09080">往台北 →</text>
-                <text x="420" y="465" font-size="9" fill="#a09080">・三重</text>
-                <text x="243" y="545" text-anchor="middle" font-size="9" fill="#a09080">↓ 大漢橋 / 往板橋・中和交流道</text>
+                <text x="18" y="470" font-size="9" fill="#a09080">← 往輔大</text>
+                <text x="18" y="485" font-size="9" fill="#a09080">新莊市區</text>
+                <text x="420" y="470" font-size="9" fill="#a09080">往台北 →</text>
+                <text x="420" y="485" font-size="9" fill="#a09080">・三重</text>
+                <text x="243" y="555" text-anchor="middle" font-size="9" fill="#a09080">↓ 大漢橋 / 往板橋・中和交流道</text>
 
                 <!-- North arrow -->
                 <rect x="14" y="10" width="40" height="28" fill="#fff" rx="5" stroke="#d0c0a0" stroke-width="1"/>
                 <text x="34" y="30" text-anchor="middle" font-size="13" fill="#8a7060" font-weight="700">↑ N</text>
 
                 <!-- Legend -->
-                <rect x="10" y="480" width="125" height="90" fill="#fff" rx="8" stroke="#e0d0c0" stroke-width="1"/>
-                <text x="20" y="497" font-size="9" fill="#8a7060" font-weight="600">圖 例</text>
-                <rect x="20" y="504" width="12" height="12" fill="#c4916a" rx="2"/>
-                <text x="38" y="514" font-size="8" fill="#6a5a4a">晶宴會館</text>
-                <rect x="20" y="520" width="12" height="12" fill="#4a8a53" rx="2"/>
-                <text x="38" y="530" font-size="8" fill="#6a5a4a">免費停車場入口</text>
-                <rect x="20" y="536" width="12" height="12" fill="#5a8ec8" rx="2"/>
-                <text x="38" y="546" font-size="8" fill="#6a5a4a">台北醫院</text>
-                <rect x="20" y="552" width="12" height="12" fill="#e8945a" rx="2"/>
-                <text x="38" y="562" font-size="8" fill="#6a5a4a">捷運站</text>
+                <rect x="10" y="500" width="125" height="90" fill="#fff" rx="8" stroke="#e0d0c0" stroke-width="1"/>
+                <text x="20" y="517" font-size="9" fill="#8a7060" font-weight="600">圖 例</text>
+                <rect x="20" y="524" width="12" height="12" fill="#c4916a" rx="2"/>
+                <text x="38" y="534" font-size="8" fill="#6a5a4a">晶宴會館</text>
+                <rect x="20" y="540" width="12" height="12" fill="#4a8a53" rx="2"/>
+                <text x="38" y="550" font-size="8" fill="#6a5a4a">免費停車場入口</text>
+                <rect x="20" y="556" width="12" height="12" fill="#5a8ec8" rx="2"/>
+                <text x="38" y="566" font-size="8" fill="#6a5a4a">台北醫院</text>
+                <rect x="20" y="572" width="12" height="12" fill="#e8945a" rx="2"/>
+                <text x="38" y="582" font-size="8" fill="#6a5a4a">捷運站</text>
             </svg>
             <div style="text-align:center; font-size:0.78em; color:#a09080; margin-top:6px;">※ 此圖為示意圖，實際位置請參考 Google Maps</div>
         </div>
