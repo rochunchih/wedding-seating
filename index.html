@@ -96,7 +96,10 @@
 
         @media print {
             body { background: #fff; }
-            .hero, .nav-links, .floor-plan, .guest-list, .search-section, .print-btn, .footer { display: none; }
+            .hero, .nav-links, .guest-list, .search-section, .print-btn, .footer { display: none; }
+            .floor-plan { margin-bottom: 20px; }
+            .floor-plan .table-circle { box-shadow: none; border: 2px solid #999; }
+            .floor-plan .table-circle.selected { transform: none; box-shadow: none; }
             .tables-list { margin: 0; }
             .tables-list h3 { font-size: 1.3em; margin-bottom: 16px; }
             .table-item-content { display: block !important; }
