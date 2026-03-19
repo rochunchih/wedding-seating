@@ -95,16 +95,31 @@
         .print-btn:hover { background: #b8805a; }
 
         @media print {
-            body { background: #fff; }
+            body { background: #fff; font-size: 12pt; }
             .hero, .nav-links, .guest-list, .search-section, .print-btn, .footer { display: none; }
-            .floor-plan { margin-bottom: 20px; }
-            .floor-plan .table-circle { box-shadow: none; border: 2px solid #999; }
+
+            /* 座位圖：獨立一頁 */
+            .container { max-width: 100%; padding: 0 20px; }
+            .floor-plan { margin-bottom: 0; page-break-after: always; }
+            .floor-plan .table-circle { width: 90px; height: 90px; box-shadow: none; border-width: 3px; }
+            .floor-plan .table-circle .num { font-size: 1.3em; }
+            .floor-plan .table-circle .label { font-size: 0.7em; }
+            .floor-plan .table-circle.main { width: 100px; height: 100px; }
             .floor-plan .table-circle.selected { transform: none; box-shadow: none; }
+            .floor-plan .stage { font-size: 1.2em; padding: 16px; }
+            .floor-note { font-size: 0.9em; margin-top: 12px; }
+
+            /* 賓客名單：從新頁開始 */
             .tables-list { margin: 0; }
-            .tables-list h3 { font-size: 1.3em; margin-bottom: 16px; }
-            .table-item-content { display: block !important; }
+            .tables-list h3 { font-size: 1.5em; margin-bottom: 20px; }
+            .table-item { border-left-width: 5px; margin-bottom: 14px; break-inside: avoid; }
+            .table-item-header { padding: 10px 14px; }
+            .table-item-title { font-size: 1.05em; font-weight: 600; }
+            .table-item-count { font-size: 0.9em; }
+            .table-item-content { display: block !important; padding: 10px 14px; }
+            .table-item-content li { font-size: 0.95em; padding: 5px 10px; }
             .chevron { display: none; }
-            .table-item { break-inside: avoid; margin-bottom: 12px; }
+            .badge { font-size: 0.8em; padding: 2px 8px; }
         }
 
         .footer { text-align: center; padding: 20px; color: #bbb; font-size: 0.78em; }
