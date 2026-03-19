@@ -86,6 +86,24 @@
         .table-item-content ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
         .table-item-content li { background: #fdf8f3; padding: 5px 10px; border-radius: 5px; font-size: 0.88em; }
 
+        .badge { display: inline-block; font-size: 0.72em; padding: 1px 6px; border-radius: 4px; margin-left: 4px; font-weight: 500; vertical-align: middle; }
+        .badge-veg { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+        .badge-beef { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+        .badge-baby { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+
+        .print-btn { display: inline-block; background: #c4916a; color: #fff; border: none; padding: 8px 20px; border-radius: 20px; font-size: 0.88em; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; margin-bottom: 12px; }
+        .print-btn:hover { background: #b8805a; }
+
+        @media print {
+            body { background: #fff; }
+            .hero, .nav-links, .floor-plan, .guest-list, .search-section, .print-btn, .footer { display: none; }
+            .tables-list { margin: 0; }
+            .tables-list h3 { font-size: 1.3em; margin-bottom: 16px; }
+            .table-item-content { display: block !important; }
+            .chevron { display: none; }
+            .table-item { break-inside: avoid; margin-bottom: 12px; }
+        }
+
         .footer { text-align: center; padding: 20px; color: #bbb; font-size: 0.78em; }
 
         @media (max-width: 400px) {
@@ -205,7 +223,7 @@
         </div>
 
         <div class="tables-list">
-            <h3>📋 所有桌位</h3>
+            <h3>📋 所有桌位 <button class="print-btn" onclick="window.print()">🖨️ 列印</button></h3>
             <div id="tables-list-content"></div>
         </div>
     </div>
@@ -231,6 +249,13 @@
 
     var currentTable = null;
 
+    function formatGuest(name) {
+        return name
+            .replace(/\(素食\)/g, '<span class="badge badge-veg">素食</span>')
+            .replace(/\(不吃牛\)/g, '<span class="badge badge-beef">不吃牛</span>')
+            .replace(/\(嬰兒椅\)/g, '<span class="badge badge-baby">嬰兒椅</span>');
+    }
+
     function selectTable(num) {
         currentTable = num;
         var t = tableData[num];
@@ -241,7 +266,7 @@
         } else {
             html += '<ul>';
             for (var i = 0; i < t.guests.length; i++) {
-                html += '<li>' + t.guests[i] + '</li>';
+                html += '<li>' + formatGuest(t.guests[i]) + '</li>';
             }
             html += '</ul>';
         }
@@ -297,7 +322,7 @@
                 html += '<p style="color:#bbb">此桌尚未安排賓客名單</p>';
             } else {
                 html += '<ul>';
-                for (var j = 0; j < t.guests.length; j++) html += '<li>' + t.guests[j] + '</li>';
+                for (var j = 0; j < t.guests.length; j++) html += '<li>' + formatGuest(t.guests[j]) + '</li>';
                 html += '</ul>';
             }
             html += '</div></div>';
