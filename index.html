@@ -95,6 +95,7 @@
         .print-btn:hover { background: #b8805a; }
 
         @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             body { background: #fff; font-size: 12pt; }
             .hero, .nav-links, .guest-list, .search-section, .print-btn, .footer { display: none; }
 
